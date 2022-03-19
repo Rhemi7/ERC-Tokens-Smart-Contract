@@ -10,16 +10,24 @@ https://rinkeby.etherscan.io/address/0xdb2a3000da09564f05f65772f7046d1924b89383#
 
 Metadata of first mint
 
-{
-  "name": "First NFT",
-  "description": "First NFT I minted, screen of my screen",
-  "image": "ipfs.io/ipfs/bafybeih5v3jvhnp2gl6u5hxoyx5glen4jwy7fdyxkcvm3i62xcpmoe5oha",
-}
+    {
+
+        "name": "First NFT",
+
+        "description": "First NFT I minted, screen of my screen",
+
+        "image": "ipfs.io/ipfs/bafybeih5v3jvhnp2gl6u5hxoyx5glen4jwy7fdyxkcvm3i62xcpmoe5oha"
+
+    }
 
 Metadata of second mint
 
-{
-  "name": "Second NFT",
-  "description": "Second NFT I minted, screenshot of hash splash screen",
-  "image": "ipfs.io/ipfs/bafkreiaeyqgt3yn3i3ndghdgp7av22c5jhdgaoekny4kpv3umu3wq6wriq"
-}
+    {
+
+        "name": "Second NFT",
+
+        "description": "Second NFT I minted, screenshot of hash splash screen",
+
+        "image": "ipfs.io/ipfs/bafkreiaeyqgt3yn3i3ndghdgp7av22c5jhdgaoekny4kpv3umu3wq6wriq"
+
+    }
