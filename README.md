@@ -1,18 +1,9 @@
-# Basic Sample Hardhat Project
+A blockchain project contained smart contracts for deploying ERC-20 and ERC-721 tokens
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+ERC-20-Contract Address
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
-
-Contract Address
 https://rinkeby.etherscan.io/address/0x724e1522f862615aD65555159E256511873232ca#code
+
+ERC-721-Contract Address
+
+https://rinkeby.etherscan.io/address/0xdb2a3000da09564f05f65772f7046d1924b89383#code
