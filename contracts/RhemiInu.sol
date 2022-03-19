@@ -20,11 +20,16 @@ contract RhemiInu {
     //Contructor to assign the total number of tokens
     //created to the address of the contract owner
 
-    constructor() {
-        totalSupply = 10**6 * 10**7;
-        decimals = 7;
-        name = "Rhemi Inu";
-        symbol = "RNI";
+    constructor(
+        uint256 _total,
+        uint256 _decimals,
+        string memory _name,
+        string memory _symbol
+    ) {
+        totalSupply = _total;
+        decimals = _decimals;
+        name = _name;
+        symbol = _symbol;
 
         balances[msg.sender] = totalSupply;
     }

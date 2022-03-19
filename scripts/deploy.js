@@ -9,7 +9,7 @@ async function main() {
     const totalSupply = 10 ** 6 * 10 ** 5;
     const decimals = 5;
     const name = "Rhemi Inu";
-    const symbol = "$RHI";
+    const symbol = "RHI";
     // Hardhat always runs the compile task when running scripts with its command
     // line interface.
     //
