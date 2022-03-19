@@ -9,26 +9,24 @@ contract RhemiInu {
     //Accounts allowed to withdraw
     mapping(address => mapping(address => uint256)) allowedAccounts;
 
-    uint256 totalSupply_;
-    uint256 decimals;
+    // cost of token to one ETH
+    uint256 public cost = 1000;
+
+    uint256 public totalSupply;
+    uint256 public decimals;
     string public name;
     string public symbol;
 
     //Contructor to assign the total number of tokens
     //created to the address of the contract owner
 
-    constructor(
-        uint256 _total,
-        uint256 _decimals,
-        string memory _name,
-        string memory _symbol
-    ) public {
-        totalSupply_ = _total;
-        decimals = _decimals;
-        name = _name;
-        symbol = _symbol;
+    constructor() {
+        totalSupply = 10**6 * 10**7;
+        decimals = 7;
+        name = "Rhemi Inu";
+        symbol = "RNI";
 
-        balances[msg.sender] = totalSupply_;
+        balances[msg.sender] = totalSupply;
     }
 
     event Approval(
@@ -38,9 +36,10 @@ contract RhemiInu {
     );
 
     event Transfer(address indexed from, address indexed to, uint256 tokens);
+    event Print(uint256 value);
 
     function getTotalSupply() public view returns (uint256) {
-        return totalSupply_;
+        return totalSupply;
     }
 
     //Get balance of a wallet
@@ -60,6 +59,7 @@ contract RhemiInu {
             tokenAmount <= balances[msg.sender],
             "You do not have enough tokens in your wallet"
         );
+        // calculatePrice(tokenAmount);
         balances[msg.sender] = balances[msg.sender] - tokenAmount;
         balances[receiver] = balances[receiver] + tokenAmount;
         emit Transfer(msg.sender, receiver, tokenAmount);
@@ -95,6 +95,21 @@ contract RhemiInu {
             allowedAccounts[owner][msg.sender] -
             tokens;
         balances[thirdParty] = balances[thirdParty] + tokens;
+        return true;
+    }
+
+    // Function for converting ETH paid into value of token
+    function calculateTokens(uint256 value) public view returns (uint256) {
+        uint256 newValue = (value * cost) / 10**18;
+        return newValue;
+    }
+
+    // Function for Eth sent into contract address
+    function buyToken(address _rec) public payable returns (bool) {
+        uint256 _amount = msg.value;
+        uint256 tokensToBUY = calculateTokens(_amount);
+        emit Print(tokensToBUY);
+        require(transferToken(tokensToBUY, _rec), "");
         return true;
     }
 }
